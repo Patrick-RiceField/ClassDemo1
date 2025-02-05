@@ -497,6 +497,8 @@ GameObject:
   - component: {fileID: 5352640962099527015}
   - component: {fileID: 5352640962099527014}
   - component: {fileID: 5352640962099527017}
+  - component: {fileID: 5352640960890365571}
+  - component: {fileID: 4176290410898542704}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -539,6 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthChange: -5
   _applyToTarget: 0
+  _knockbackForce: 0
   _destroyOnCollision: 0
 --- !u!114 &5352640962099527014
 MonoBehaviour:
@@ -552,6 +555,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f0a7a55326dec468fc19e72795505e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultActions:
+    m_PersistentCalls:
+      m_Calls: []
+  _alertedActions:
+    m_PersistentCalls:
+      m_Calls: []
+  _huntActions:
+    m_PersistentCalls:
+      m_Calls: []
+  _miscPattern1Actions:
+    m_PersistentCalls:
+      m_Calls: []
+  _miscPattern2Actions:
+    m_PersistentCalls:
+      m_Calls: []
+  _miscPattern3Actions:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &5352640962099527017
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -565,6 +586,40 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5352640960890365571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352640962099527013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bb9e3fdf1dc994087726a4dbfabee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainExplosionChunk: {fileID: 6204218516579537818, guid: f8b3ae26db2fa0445b292e6b2bed1577, type: 3}
+  _secondaryExplosionChunk: {fileID: 4581655010548477450, guid: 948b534dbac4ffd4ba6182d3fc7ab822, type: 3}
+  _minChunks: 15
+  _maxChunks: 30
+  _explosionForce: 1500
+--- !u!114 &4176290410898542704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352640962099527013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512e16688c05af34fbb169512b7d766c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 10
+  _healthCur: 10
+  _invincibilityFramesMax: 1
+  _invincibilityFramesCur: 0
+  _isDead: 0
 --- !u!1 &5352640962197708511
 GameObject:
   m_ObjectHideFlags: 0
